@@ -60,6 +60,7 @@ Follow these steps to quickly launch the AWS Glue Spark History Server:
 The `run.sh` script handles launching the Spark History Server using your AWS credentials, based on the configuration
 in `config.sh`.
 
+
 #### Supported Authentication Methods
 
 ---
@@ -76,9 +77,6 @@ Each method:
 - Builds the Docker image (if not already built).
 - Starts a container running the Spark History Server.
 - Connects to the specified S3 bucket to fetch Glue Spark logs.
-
-> **Note:**  
-> Make sure to update the `AWS_S3_LOG_BUCKET` and credentials in the `config.sh` file before running the script.
 
 
 ### Summary
