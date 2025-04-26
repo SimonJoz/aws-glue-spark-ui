@@ -19,15 +19,13 @@ and Docker.
 ```
 
 
-
-
 ### Prerequisites
 
 ---
 
 - [Docker](https://docs.docker.com/get-docker/) installed locally.
 - Access to the S3 bucket where AWS Glue Spark event logs are stored.
-- AWS CLI profile configured (`~/.aws/credentials`) **OR** Direct AWS Access and Secret Key (and optionally, a Session Token).
+- AWS CLI profile configured (`~/.aws/credentials`) or Direct AWS Access and Secret Key (and optionally, a Session Token).
 
 
 ### Getting Started
@@ -42,13 +40,7 @@ Follow these steps to quickly launch the AWS Glue Spark History Server:
     cd aws-glue-spark-ui
     chmod +x run.sh config.sh
     ```
-
-2. **Configure your AWS credentials and S3 log directory**
-    - Edit the `config.sh` file and update your S3 bucket path and AWS credentials:
-        - **AWS Profile**: Use if you have an AWS CLI profile configured.
-        - **AWS Access Key & Secret Key**: Use if you want to directly pass static credentials.
-        - **AWS Temporary Credentials**: Use if you are using temporary credentials (Session Token).
-
+2. **Configure your AWS credentials and S3 log directory in `config.sh`**
 3. **Run the Spark History Server**
     ```bash
     ./run.sh profile
@@ -58,8 +50,7 @@ Follow these steps to quickly launch the AWS Glue Spark History Server:
     ./run.sh temporary
     ```
 
-4. **Access the Spark UI**  
-   Open your browser and go to: [http://localhost:18080](http://localhost:18080)
+4. **Open your browser and go to: [http://localhost:18080](http://localhost:18080) to access the Spark UI**
 
 
 ### Running the Spark History Server (Details)
@@ -69,7 +60,8 @@ Follow these steps to quickly launch the AWS Glue Spark History Server:
 The `run.sh` script handles launching the Spark History Server using your AWS credentials, based on the configuration
 in `config.sh`.
 
-#### **Supported Authentication Methods**:
+#### Supported Authentication Methods
+
 ---
 
 - **AWS CLI Profile**: If you have an AWS CLI profile configured (e.g., `~/.aws/credentials`), set
@@ -96,6 +88,3 @@ Each method:
 - **Configure** your AWS credentials and S3 bucket in `config.sh`.
 - **Run** the script with `./run.sh`.
 - **Browse** your AWS Glue Spark job history at [http://localhost:18080](http://localhost:18080).
-
-
-
