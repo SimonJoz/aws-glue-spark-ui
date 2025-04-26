@@ -24,8 +24,13 @@ usage() {
 }
 
 build_image() {
-  echo -e "\033[1;34mBuilding Docker image...\033[0m"
-  docker build -t $DOCKER_IMAGE .
+  # Check if the Docker image already exists
+  if ! docker image inspect $DOCKER_IMAGE > /dev/null 2>&1; then
+    echo -e "Building Docker image..."
+    docker build -t $DOCKER_IMAGE .
+  else
+    echo -e "Docker image '$DOCKER_IMAGE' already exists. Skipping build."
+  fi
 }
 
 run_profile() {
@@ -83,7 +88,7 @@ case "$1" in
     access) run_access_key_and_secret ;;
     temporary) run_temp_creds ;;
     *)
-      echo -e "\033[1;31mError: Invalid option '$1'.\033[0m"
+      echo -e "Error: Invalid option '$1'."
       usage ;;
 esac
 

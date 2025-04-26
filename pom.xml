@@ -4,10 +4,10 @@
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.amazonaws</groupId>
-	<artifactId>SparkHistoryServer</artifactId>
+	<artifactId>Spark-History-Server</artifactId>
 	<packaging>jar</packaging>
 	<version>2.0-SNAPSHOT</version>
-	<name>HadoopForGlueSparkHistoryServer</name>
+	<name>Spark-History-Server</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
